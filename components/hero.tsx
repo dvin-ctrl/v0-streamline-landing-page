@@ -251,13 +251,13 @@ export default function Hero() {
                 transition={{ duration: 1, delay: 0.3 }}
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight"
               >
-                <span className="block text-white mb-2">FULL-SERVICE </span>
-                <span className="block text-white mb-2">OUTBOUND FOR </span>
+                <span className="block text-white mb-2">FULL-SERVICE</span>
+                <span className="block text-white mb-2">OUTBOUND FOR</span>
                 <span className="block mb-2">
                   <TypingText
                     texts={["B2B Businesses", "Founders", "GTM teams"]}
                     className={cn(
-                      "bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent font-bold",
+                      "bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent",
                       pacifico.className,
                     )}
                     typingSpeed={150}
