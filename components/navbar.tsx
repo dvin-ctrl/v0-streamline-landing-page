@@ -3,10 +3,21 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
 import { useState } from "react"
 import { motion } from "framer-motion"
 import AnimatedButton from "./animated-button"
+
+const MenuIcon = () => (
+  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+  </svg>
+)
+
+const XIcon = () => (
+  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+  </svg>
+)
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -64,7 +75,7 @@ export default function Navbar() {
             </div>
 
             <div className="hidden md:block">
-              <div className="flex items-center space-x-8">
+              <div className="flex items-center gap-8">
                 <a href="#process" className="text-gray-300 hover:text-white transition-colors cursor-pointer">
                   Process
                 </a>
@@ -88,7 +99,7 @@ export default function Navbar() {
 
             <div className="md:hidden">
               <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                {isMenuOpen ? <X className="h-5 w-5 text-gray-300" /> : <Menu className="h-5 w-5 text-gray-300" />}
+                {isMenuOpen ? <XIcon /> : <MenuIcon />}
               </Button>
             </div>
           </div>
@@ -97,7 +108,7 @@ export default function Navbar() {
         {/* Mobile menu */}
         {isMenuOpen && (
           <div className="md:hidden border-t border-gray-700/50 bg-gray-900/80 backdrop-blur-md rounded-b-2xl">
-            <div className="px-6 py-4 space-y-3">
+            <div className="px-6 py-4 flex flex-col gap-3">
               <a href="#process" className="block text-gray-300 hover:text-white transition-colors py-2">
                 Process
               </a>
